@@ -37,6 +37,11 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function (req, res, next) { //when user is logged in, add a user variable that’s available inside all EJS templates; using Express’ res.locals object. If nobody is logged in, user will be undefined.
+  res.locals.user = req.user;
+  next();
+});
+
 
 app.use('/', indexRouter);
 app.use('/movies', moviesRouter);
