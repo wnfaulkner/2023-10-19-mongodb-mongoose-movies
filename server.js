@@ -1,11 +1,11 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session');
-var passport = require('passport');
-var methodOverride = require('method-override'); //require method-override middleware
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
+const methodOverride = require('method-override'); //require method-override middleware
 
 //Configs
 require('dotenv').config();
@@ -18,7 +18,7 @@ const moviesRouter = require('./routes/movies');
 const reviewsRouter = require('./routes/reviews');
 const performersRouter = require('./routes/performers');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
